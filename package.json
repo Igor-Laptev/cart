@@ -4,6 +4,7 @@
   "description": "",
   "main": "runner.js",
   "scripts": {
+
     "test": "jest"
   },
   "keywords": [],
