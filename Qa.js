@@ -9,7 +9,9 @@ class List {
     if (this.themes === 1) {
       return fs.readFileSync('./topics/nighthawk_flashcard_data', ' utf-8');
     }
+    if (this.themes === 2) {
+      return fs.readFileSync('./topics/otter_flashcard_data.txt', ' utf-8');
+    }
   }
 }
-
 module.exports = List;
