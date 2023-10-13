@@ -5,7 +5,7 @@ class List {
     this.themes = themes;
   }
 
-  theme() {
+  questions() {
     if (this.themes === 1) {
       return fs
         .readFileSync('./topics/nighthawk_flashcard_data.txt', 'utf-8')
