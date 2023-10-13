@@ -4,7 +4,7 @@
   "description": "",
   "main": "runner.js",
   "scripts": {
-    "start": "node Qa.js",
+
     "test": "jest"
   },
   "keywords": [],
