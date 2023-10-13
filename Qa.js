@@ -1,4 +1,4 @@
-const fs = require('fs').promises;
+const fs = require('fs');
 
 class List {
   constructor(themes) {
@@ -7,15 +7,28 @@ class List {
 
   theme() {
     if (this.themes === 1) {
-      return fs.readFileSync('./topics/nighthawk_flashcard_data', ' utf-8');
+      return fs
+        .readFileSync('./topics/nighthawk_flashcard_data.txt', 'utf-8')
+        .split('\n')
+        .filter((el) => el !== '')
+        .filter((el, i) => i % 2 === 0);
     }
     if (this.themes === 2) {
-      return fs.readFileSync('./topics/otter_flashcard_data.txt', ' utf-8');
+      return fs
+        .readFileSync('./topics/otter_flashcard_data.txt', 'utf-8')
+        .split('\n')
+        .filter((el) => el !== '')
+        .filter((el, i) => i % 2 === 0);
     }
 
     if (this.themes === 3) {
-      return fs.readFileSync('./topics/raccoon_flashcard_data.txt', ' utf-8');
+      return fs
+        .readFileSync('./topics/raccoon_flashcard_data.txt', 'utf-8')
+        .split('\n')
+        .filter((el) => el !== '')
+        .filter((el, i) => i % 2 === 0);
     }
   }
 }
+
 module.exports = List;
