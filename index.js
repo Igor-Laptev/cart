@@ -2,7 +2,6 @@ const fs = require("fs").promises;
 const User = require("./user.js");
 const Quest = require("./Qa.js");
 const readline = require("readline");
-const { error } = require("console");
 
 async function reg() {
   try {
@@ -12,8 +11,21 @@ async function reg() {
       prompt: "> ",
     });
     console.log("Привет, как тебя зовут? ");
-  } catch {
-    error;
+
+    rl.prompt();
+
+    rl.on("line", (input) => {
+      const name = input.trim();
+      if (name) {
+        rl.close();
+        console.log(`Привет! ${name}`);
+      } else {
+        console.log("Пожалуйста, введите ваше имя:");
+        rl.prompt();
+      }
+    });
+  } catch (error) {
+    console.error(error);
   }
 }
-game();
+
