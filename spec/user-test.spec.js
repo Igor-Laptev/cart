@@ -1,4 +1,4 @@
-const User = require("../user"); // Импортируем класс User
+const User = require("../user");
 
 describe("Проверка работы  User класса", () => {
   let user;
@@ -8,7 +8,7 @@ describe("Проверка работы  User класса", () => {
   });
   describe("Проверка работы constructor", () => {
     it("Корректное имя", () => {
-      expect(user.name).toBe("Санечка"); // Проверяем, что имя установлено правильно
+      expect(user.name).toBe("Санечка");
     });
     it("Имя не задано", () => {
       user = new User("");
