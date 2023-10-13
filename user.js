@@ -12,3 +12,5 @@ class User {
     this.score -= 100;
   }
 }
+
+module.exports = User;
