@@ -11,7 +11,7 @@ function getName() {
       prompt: "> ",
     });
 
-    console.log("Привет, как тебя зовут? ");
+    console.log("\x1b[44m Привет, как тебя зовут? \x1b[0m ");
 
     rl.prompt();
 
@@ -21,7 +21,7 @@ function getName() {
         rl.close();
         resolve(name);
       } else {
-        console.log("Пожалуйста, введите ваше имя:");
+        console.log("\x1b[45mПожалуйста, введите ваше имя:\x1b[0m");
         rl.prompt();
       }
     });
@@ -45,7 +45,7 @@ function play(theme) {
         rl.close();
         resolve(userAnswer);
       } else {
-        console.log("Пожалуйста, выбери тему");
+        console.log("\x1b[45m Пожалуйста, выбери тему\x1b[0m");
         rl.prompt();
       }
     });
@@ -60,7 +60,7 @@ function choose(name) {
     });
 
     console.log(
-      `${name} Выбери тему: \n 1. Донорство 2. Цитаты из фильмов 3. Спанч Боб`
+      `\x1b[34m ${name} Выбери тему: \n \x1b[31m 1. Донорство \x1b[32m 2. Цитаты из фильмов \x1b[33m 3. Спанч Боб\x1b[0m`
     );
 
     rl.prompt();
