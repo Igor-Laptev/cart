@@ -1,8 +1,6 @@
 const fs = require("fs");
 
-
 const { EOL } = require("os");
-
 
 class List {
   constructor(themes) {
@@ -12,9 +10,7 @@ class List {
     if (this.themes === "1") {
       return fs
 
-        
-
-        .readFileSync("./topics/nighthawk_flashcard_data.txt", "utf-8")
+        .readFileSync("./topics/donor.txt", "utf-8")
         .split(EOL)
 
         .filter((el) => el !== "")
@@ -23,8 +19,7 @@ class List {
     if (this.themes === "2") {
       return fs
 
-       
-        .readFileSync("./topics/otter_flashcard_data.txt", "utf-8")
+        .readFileSync("./topics/films.txt", "utf-8")
         .split(EOL)
 
         .filter((el) => el !== "")
@@ -34,7 +29,7 @@ class List {
     if (this.themes === "3") {
       return fs
 
-        .readFileSync("./topics/raccoon_flashcard_data.txt", "utf-8")
+        .readFileSync("./topics/mult.txt", "utf-8")
         .split(EOL)
 
         .filter((el) => el !== "")
@@ -45,7 +40,7 @@ class List {
   answers() {
     if (this.themes === "1") {
       return fs
-        .readFileSync("./topics/nighthawk_flashcard_data.txt", "utf-8")
+        .readFileSync("./topics/donor.txt", "utf-8")
 
         .split(EOL)
 
@@ -54,8 +49,7 @@ class List {
     }
     if (this.themes === "2") {
       return fs
-        .readFileSync("./topics/otter_flashcard_data.txt", "utf-8")
-
+        .readFileSync("./topics/films.txt", "utf-8")
 
         .split(EOL)
 
@@ -65,7 +59,7 @@ class List {
 
     if (this.themes === "3") {
       return fs
-        .readFileSync("./topics/raccoon_flashcard_data.txt", "utf-8")
+        .readFileSync("./topics/mult.txt", "utf-8")
 
         .split(EOL)
 

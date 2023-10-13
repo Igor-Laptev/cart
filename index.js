@@ -59,7 +59,9 @@ function choose(name) {
       prompt: "> ",
     });
 
-    console.log(`${name} Выбери тему: \n 1. Общие 2. Не общие 3. Любые`);
+    console.log(
+      `${name} Выбери тему: \n 1. Донорство 2. Цитаты из фильмов 3. Спанч Боб`
+    );
 
     rl.prompt();
 
@@ -69,7 +71,9 @@ function choose(name) {
         rl.close();
         resolve(num);
       } else {
-        console.log(`${name} Выбери тему: \n 1. Общие 2. Не общие 3. Любые`);
+        console.log(
+          `${name} Выбери тему: \n 1. Донорство 2. Цитаты из фильмов 3. Спанч Боб`
+        );
         rl.prompt();
       }
     });
@@ -90,18 +94,17 @@ async function main() {
       } else {
         counter = num;
         const theme = new List(num);
-        console.log(theme);
         for (let i = 0; i < theme.questions().length; i += 1) {
           const answ = await play(theme.questions()[i]);
           if (answ.toLowerCase() === theme.answers()[i].toLowerCase()) {
             console.log("Молодец!");
-            user.plusScore(100);
+            user.calculatorPLus(100);
             console.log(`Ваши очки: ${user.score}`);
           } else {
             console.log(
               `Ошибочка вышла... \nПравильный ответ: ${theme.answers()[i]}`
             );
-            user.minusScore(100);
+            user.calculatorMinus(100);
             console.log(`Ваши очки: ${user.score}`);
           }
           fs.writeFile(
